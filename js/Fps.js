@@ -1,15 +1,11 @@
-class Fps{
-  constructor(){
-    this.frames = 0; 
-    this.frame = 0;
-    var time = new Date().getTime();
-  }
-  get(){
-    this.step =new Date().getTime()-time;
-    this.frames =  Math.round(1000/step);
+function Fps(){
+  this.fps = 0;
+  this.time = new Date().getTime();  
+
+  this.get = function(){
+    this.step = new Date().getTime()-this.time;
+    this.fps =  Math.round(1000/this.step);
     this.time = new Date().getTime();
-    return this.frames;
-    this.frame++;
+    return this.fps;
   }
-  
 }
