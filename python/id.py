@@ -16,6 +16,13 @@ def getID():
     name += char
   return name
 # 62
-while 1:
-  print(getID())
-  time.sleep(0.01)
+
+
+def addUrl(url):
+  data = ""
+  with open("data.txt", "r") as text_file:
+    data = text_file.read()
+  with open("data.txt", "w") as text_file:
+    text_file.write(data+"\n"+url)
+
+
