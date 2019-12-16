@@ -26,3 +26,10 @@ def addUrl(url):
     text_file.write(data+"\n"+url)
 
 
+import requests
+
+def findPage(url):
+  html = ""
+  with requests.get(url) as html_file:
+    html = html_file.text
+  print(html)
