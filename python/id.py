@@ -27,7 +27,7 @@ def addUrl(url):
     text_file.write(data+"\n"+url)
 
 
-
+u = "https://dl.free.fr/getfile.pl?file=/"
 def findPage(url):
   html = ""
   with requests.get(url) as html_file:
