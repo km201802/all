@@ -3,7 +3,6 @@ import requests as requests
 url = 'https://brainly.com/question/2454942'
 url = input('link:  ')
 ide = 'upvoteCount'
-#url  'https://google.com/'
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 data = requests.get(url, headers=headers)
 text1 = data.text
