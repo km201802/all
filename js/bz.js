@@ -6,20 +6,24 @@ function setup(){
   width = innerWidth;
   height = innerHeight;
   createCanvas(width, height);
-  noLoop();
+  //noLoop();
 }
 
-var points = [];
 var fd = [{x:100,y:200},{x:200,y:100},{x:300,y:200}];
-
+var list = [];
 
 function draw(){
   background(100);
   noFill();
-  bz(points);
+  bz(list);
+} 
+function mouseClicked(){
+  list.push({x:mouseX, y:mouseY});
+  console.log(list);
 }
 
 function bz(points) {
+  //console.log(points.length);
   if (points.length > 2) {
     var lastx = points[0].x;
     var lasty = points[0].y;
@@ -48,8 +52,7 @@ function bz(points) {
       line(x3, y3, x4, y4);
       stroke("blue");
       try {
-        bezier(points[i - 1].x, points[i - 1].y, lastx, lasty,
-          x4, y4, points[i].x, points[i].y);
+        bezier(points[i - 1].x, points[i - 1].y, lastx, lasty, x4, y4, points[i].x, points[i].y);
       } catch (e) {
 
       }
@@ -58,13 +61,13 @@ function bz(points) {
       if (i == points.length - 1) {
 
       }
-      console.log("x:" + v.x + "  y:" + v.y);
-      console.log("x: " + v2.x + "  y:" + v2.y);
+      //console.log("x:" + v.x + "  y:" + v.y);
+      //console.log("x: " + v2.x + "  y:" + v2.y);
     }
-  }
   bezier(points[points.length - 1].x, points[points.length - 1].y, lastx, lasty,
     points[points.length - 2].x, points[points.length - 2].y,
     points[points.length - 2].x, points[points.length - 2].y);
   //bezier(200,200,300,200,300,300,300,300);
+  }
 
 }
