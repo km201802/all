@@ -61,8 +61,6 @@ function bz(points) {
       if (i == points.length - 1) {
 
       }
-      //console.log("x:" + v.x + "  y:" + v.y);
-      //console.log("x: " + v2.x + "  y:" + v2.y);
     }
   bezier(points[points.length - 1].x, points[points.length - 1].y, lastx, lasty,
     points[points.length - 2].x, points[points.length - 2].y,
